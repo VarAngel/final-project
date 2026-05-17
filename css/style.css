@@ -179,6 +179,17 @@ header {
   gap: 30px;
 }
 
+.fade-out {
+  opacity: 0;
+  transform: translateY(-5px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
 .japan-card h3 {
   font-family: var(--font-delta);
   font-size: 20px;
