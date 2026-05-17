@@ -1,0 +1,145 @@
+.dev-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 70px);
+    margin-top: 70px;
+    text-align: center;
+    padding: 40px 20px;
+    box-sizing: border-box;
+    background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(248,248,248,1) 100%);
+}
+
+.dev-content {
+    max-width: 650px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.6);
+    border: 1px solid #eee;
+    border-radius: 24px;
+    padding: 60px 40px;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.02);
+    animation: fadeInDev 0.8s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
+}
+
+.dev-icon-wrapper {
+    position: relative;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+.dev-jap-char {
+    font-family: var(--font-delta);
+    font-size: 84px;
+    color: rgba(255, 51, 51, 0.05);
+    display: block;
+    line-height: 1;
+    letter-spacing: 2px;
+    user-select: none;
+}
+
+.dev-graphic {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    gap: 15px;
+    font-size: 38px;
+}
+
+.emoji-crane {
+    animation: craneFloat 3s infinite ease-in-out;
+}
+
+.emoji-sakura {
+    animation: sakuraRotate 8s infinite linear;
+}
+
+.dev-title {
+    font-family: var(--font-delta);
+    font-size: 32px;
+    color: #111;
+    margin: 10px 0 20px 0;
+    text-transform: uppercase;
+    letter-spacing: -0.5px;
+}
+
+.dev-text {
+    font-family: var(--font-main);
+    font-size: 16px;
+    color: #555;
+    line-height: 1.8;
+    margin: 0 0 40px 0;
+}
+
+.dev-actions {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.secondary-btn {
+    background-color: transparent;
+    color: #444;
+    border: 1px solid #ccc;
+    box-shadow: none;
+}
+
+.secondary-btn:hover {
+    background-color: rgba(0, 0, 0, 0.03);
+    color: #111;
+    border-color: #888;
+    box-shadow: none;
+}
+
+@keyframes fadeInDev {
+    from { opacity: 0; transform: translateY(25px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes craneFloat {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-6px) rotate(-3deg); }
+}
+
+@keyframes sakuraRotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@media screen and (max-width: 768px) {
+    .dev-container {
+        margin-top: 0;
+        min-height: 100vh;
+        padding: 20px 15px;
+    }
+    
+    .dev-content {
+        padding: 40px 20px;
+        border-radius: 16px;
+    }
+    
+    .dev-jap-char {
+        font-size: 64px;
+    }
+    
+    .dev-title {
+        font-size: 24px;
+    }
+    
+    .dev-text {
+        font-size: 14px;
+        margin-bottom: 30px;
+    }
+    
+    .dev-actions {
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .dev-actions .action-btn {
+        width: 100%;
+    }
+}
