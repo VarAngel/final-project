@@ -94,6 +94,20 @@
         </div>
     </section>
 
+    <div class="global-coin-rain" id="global-coin-rain"></div>
+
+    <footer class="main-footer">
+        <div class="footer-container">
+            <p class="footer-copy">&copy; 2026 JapanWay. Все права защищены.</p>
+            
+            <div class="lucky-cat-wrapper" id="lucky-cat-trigger">
+                <div class="coin-container" id="coin-container"></div>
+                <div class="lucky-cat">🐱👋</div>
+                <span class="cat-tooltip">Нажми на удачу</span>
+            </div>
+        </div>
+    </footer>
+
 </main>
 
 <script>
@@ -135,6 +149,42 @@
         }
     }
     getTokyoWeather();
+
+    const catTrigger = document.getElementById('lucky-cat-trigger');
+    const rainContainer = document.getElementById('global-coin-rain');
+
+    if (catTrigger && rainContainer) {
+        catTrigger.addEventListener('click', function() {
+            catTrigger.classList.add('cat-flash');
+            setTimeout(() => catTrigger.classList.remove('cat-flash'), 500);
+
+            const coinCount = 25; 
+
+            for (let i = 0; i < coinCount; i++) {
+                const coin = document.createElement('div');
+                coin.className = 'rain-coin';
+                coin.innerText = '🪙';
+                
+                const randomX = Math.random() * 100;
+                coin.style.left = `${randomX}%`;
+                
+                const randomDelay = Math.random() * 0.8;
+                coin.style.animationDelay = `${randomDelay}s`;
+                
+                const randomDuration = 1.2 + Math.random() * 1.0;
+                coin.style.animationDuration = `${randomDuration}s`;
+                
+                const randomSize = 14 + Math.random() * 12;
+                coin.style.fontSize = `${randomSize}px`;
+
+                rainContainer.appendChild(coin);
+
+                setTimeout(() => {
+                    coin.remove();
+                }, (randomDelay + randomDuration) * 1000);
+            }
+        });
+    }
 </script>
 
 </body>
