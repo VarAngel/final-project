@@ -1,231 +1,141 @@
-.gallery-hero {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 60px 40px 40px 40px;
-    text-align: center;
-    box-sizing: border-box;
-}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Галерея — Визуальное путешествие по Японии</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/gallery.css">
+</head>
+<body>
 
-.gallery-hero h1 {
-    font-family: var(--font-delta);
-    font-size: 42px;
-    color: #111;
-    margin: 10px 0 20px 0;
-    text-transform: uppercase;
-    letter-spacing: -1px;
-}
+<header class="main-header">
+    <div class="header-logo">
+        <a href="index.html">
+            <img src="photo/logo.png" alt="Логотип">
+        </a>
+    </div>
 
-.gallery-hero-text {
-    font-family: var(--font-main);
-    font-size: 16px;
-    color: #666;
-    max-width: 650px;
-    margin: 0 auto;
-    line-height: 1.8;
-}
+    <nav class="header-center-nav">
+        <a href="index.html" class="nav-btn">Главная</a>
+        <a href="gallery.html" class="nav-btn active">Галерея</a>
+        <a href="routes.html" class="nav-btn">Маршруты</a>
+        <a href="about.html" class="nav-btn">О нас</a>
+    </nav>
 
-.gallery-section {
-    max-width: 1400px;
-    margin: 0 auto 100px auto;
-    padding: 0 40px;
-    box-sizing: border-box;
-}
+    <div class="header-right-action">
+        <a href="register.html" class="action-btn">Вход</a>
+    </div>
+</header>
 
-.location-branding {
-    display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-    border-bottom: 2px solid #f0f0f0;
-    padding-bottom: 15px;
-    margin-bottom: 35px;
-}
-
-.location-branding h2 {
-    font-family: var(--font-delta);
-    font-size: 28px;
-    margin: 0;
-    text-transform: uppercase;
-    color: #1a1a1a;
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-
-.location-branding h2 span.jap-char {
-    color: var(--accent-color);
-    font-size: 20px;
-    opacity: 0.8;
-}
-
-.location-meta {
-    font-family: var(--font-main);
-    font-size: 14px;
-    color: #888;
-    font-style: italic;
-}
-
-.photo-card {
-    position: relative;
-    border-radius: 20px;
-    overflow: hidden;
-    background-color: #fcfcfc;
-    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.04);
-    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), 
-                box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-    cursor: pointer;
-}
-
-.photo-card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1),
-                filter 0.5s ease;
-}
-
-.photo-info {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    padding: 40px 30px 30px 30px;
-    background: linear-gradient(to top, 
-        rgba(0, 0, 0, 0.85) 0%, 
-        rgba(0, 0, 0, 0.4) 60%, 
-        rgba(0, 0, 0, 0) 100%);
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    opacity: 0;
-    transform: translateY(15px);
-    transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
-                transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.photo-title {
-    font-family: var(--font-delta);
-    color: #ffffff;
-    font-size: 16px;
-    text-transform: uppercase;
-    margin: 0 0 8px 0;
-    letter-spacing: 0.5px;
-}
-
-.photo-tags {
-    display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
-}
-
-.tag {
-    font-family: var(--font-main);
-    font-size: 11px;
-    background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
-    color: #fff;
-    padding: 3px 10px;
-    border-radius: 6px;
-    text-transform: lowercase;
-}
-
-@media (hover: hover) {
-    .photo-card:hover {
-        transform: translateY(-6px);
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
-    }
+<main class="main-content">
     
-    .photo-card:hover img {
-        transform: scale(1.05);
-    }
-    
-    .photo-card:hover .photo-info {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
+    <section class="gallery-hero">
+        <span class="jap-subtitle">写真展</span>
+        <h1>Экспозиция ощущений</h1>
+        <p class="gallery-hero-text">
+            Фотография улавливает то, что ускользает от взгляда. Погрузитесь в контрасты великой восточной культуры через призму трех аутентичных визуальных сюжетов.
+        </p>
+    </section>
 
-.grid-container {
-    display: grid;
-    gap: 30px;
-}
+    <section class="gallery-section">
+        <div class="location-branding">
+            <h2><span class="jap-char">東京</span> Неоновые улицы Токио</h2>
+            <div class="location-meta">Киберпанк, динамика, бессонные кварталы</div>
+        </div>
+        
+        <div class="grid-container grid-tokyo">
+            <div class="photo-card card-1">
+                <img src="photo/1.png" alt="Синдзюку в неоновых огнях">
+                <div class="photo-info">
+                    <h3 class="photo-title">Огни полуночного Синдзюку</h3>
+                </div>
+            </div>
+            <div class="photo-card card-2">
+                <img src="photo/2.png" alt="Перекресток Сибуя сверху">
+                <div class="photo-info">
+                    <h3 class="photo-title">Ритм перекрестка Сибуя</h3>
+                </div>
+            </div>
+            <div class="photo-card card-3">
+                <img src="photo/3.png" alt="Атмосферные переулки Омоидзэ Ёкотё">
+                <div class="photo-info">
+                    <h3 class="photo-title">Скрытые переулки Омоидзэ Ёкотё</h3>
+                </div>
+            </div>
+        </div>
+    </section>
 
-.grid-tokyo {
-    grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: repeat(2, 320px);
-}
-.grid-tokyo .card-1 { grid-column: span 7; grid-row: span 2; }
-.grid-tokyo .card-2 { grid-column: span 5; grid-row: span 1; }
-.grid-tokyo .card-3 { grid-column: span 5; grid-row: span 1; }
+    <section class="gallery-section">
+        <div class="location-branding">
+            <h2><span class="jap-char">京都</span> Умиротворяющие рощи Киото</h2>
+            <div class="location-meta">Дзен, шелест бамбука, наследие тысячелетий</div>
+        </div>
+        
+        <div class="grid-container grid-kyoto">
+            <div class="photo-card card-1">
+                <img src="photo/4.png" alt="Бамбуковый лес Арасияма">
+                <div class="photo-info">
+                    <h3 class="photo-title">Стебли Арасиямы на ветру</h3>
+                </div>
+            </div>
+            <div class="photo-card card-2">
+                <img src="photo/5.png" alt="Золотой павильон Кинкаку-дзи">
+                <div class="photo-info">
+                    <h3 class="photo-title">Отражение Золотого Павильона</h3>
+                </div>
+            </div>
+            <div class="photo-card card-3">
+                <img src="photo/6.png" alt="Ворота Тории в Фусими Инари">
+                <div class="photo-info">
+                    <h3 class="photo-title">Коридоры ворот Фусими Инари</h3>
+                </div>
+            </div>
+        </div>
+    </section>
 
-.grid-kyoto {
-    grid-template-columns: repeat(3, 1fr);
-    height: 500px;
-}
-.grid-kyoto .photo-card { height: 100%; }
+    <section class="gallery-section">
+        <div class="location-branding">
+            <h2><span class="jap-char">富士山</span> Заснеженные вершины Фудзи</h2>
+            <div class="location-meta">Симметрия природы, вечный покой, символ страны</div>
+        </div>
+        
+        <div class="grid-container grid-fuji">
+            <div class="photo-card card-1">
+                <img src="photo/7.png" alt="Пагода Чурейто на фоне Фудзи">
+                <div class="photo-info">
+                    <h3 class="photo-title">Пагода Чурейто на рассвете</h3>
+                </div>
+            </div>
+            <div class="photo-card card-2">
+                <img src="photo/8.png" alt="Фудзи у озера Кавагутико">
+                <div class="photo-info">
+                    <h3 class="photo-title">Зеркало озера Кавагутико</h3>
+                </div>
+            </div>
+            <div class="photo-card card-3">
+                <img src="photo/9.png" alt="Фудзи дальний план панорама">
+                <div class="photo-info">
+                    <h3 class="photo-title">Священный пик сквозь облака</h3>
+                </div>
+            </div>
+        </div>
+    </section>
 
-.grid-fuji {
-    grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: 300px 380px;
-}
-.grid-fuji .card-1 { grid-column: span 6; }
-.grid-fuji .card-2 { grid-column: span 6; }
-.grid-fuji .card-3 { grid-column: span 12; }
+    <section class="cta-gallery-section">
+        <div class="cta-container">
+            <span class="jap-subtitle">旅のルート</span>
+            <h3>Спланируйте своё приключение</h3>
+            <p class="cta-text">
+                Откройте готовые авторские маршруты по самым удивительным уголкам страны. От динамичных кварталов мегаполисов до уединенных троп в древних лесах — начните планировать путешествие мечты прямо сейчас.
+            </p>
+            <a href="routes.html" class="action-btn cta-btn">
+                Посмотреть маршруты
+            </a>
+        </div>
+    </section>
 
-@media screen and (max-width: 1024px) {
-    .gallery-hero h1 { font-size: 34px; }
-    .grid-tokyo { grid-template-rows: repeat(2, 260px); gap: 20px; }
-    .grid-kyoto { height: 400px; gap: 20px; }
-    .grid-fuji { grid-template-rows: 240px 300px; gap: 20px; }
-}
+</main>
 
-@media screen and (max-width: 768px) {
-    .gallery-hero {
-        padding: 40px 20px 20px 20px;
-    }
-    .gallery-hero h1 {
-        font-size: 26px;
-        margin-bottom: 12px;
-    }
-    .gallery-hero-text {
-        font-size: 14px;
-    }
-    
-    .gallery-section {
-        padding: 0 20px;
-        margin-bottom: 60px;
-    }
-    
-    .location-branding {
-        margin-bottom: 20px;
-    }
-    
-    .location-branding h2 {
-        font-size: 20px;
-    }
-    
-    .grid-container {
-        grid-template-columns: 1fr !important;
-        grid-template-rows: auto !important;
-        height: auto !important;
-        gap: 20px !important;
-    }
-    
-    .photo-card {
-        grid-column: auto !important;
-        grid-row: auto !important;
-        height: 280px !important;
-    }
-    
-    .photo-info {
-        opacity: 1;
-        transform: translateY(0);
-        padding: 30px 20px 20px 20px;
-    }
-    
-    .photo-title {
-        font-size: 14px;
-    }
-}
+</body>
+</html>
