@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=BIZ+UDPMincho:wght@400;700&family=Dela+Gothic+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Zen+Kaku+Gothic+New:wght@400;700&display=swap');
 
 html {
   scroll-behavior: smooth;
@@ -10,13 +10,14 @@ html {
   --bg-blur: rgba(255, 255, 255, 0.1);
   --blur-strength: 8px;
   --font-delta: "Dela Gothic One", sans-serif;
-  --font-biz: "BIZ UDPMincho", serif;
+  --font-main: "Zen Kaku Gothic New", serif;
 }
 
 body {
-  font-family: var(--font-biz);
+  font-family: var(--font-main);
   margin: 0;
-  padding-top: 70px;
+  padding-top: 0;
+  -webkit-font-smoothing: antialiased;
 }
 
 header {
@@ -135,7 +136,6 @@ a {
   transform: scale(0.98);
 }
 
-
 @media screen and (max-width: 992px) {
   .main-header {
     padding: 0 20px;
@@ -157,10 +157,6 @@ a {
     gap: 12px;
     padding: 15px 10px;
     position: static;
-  }
-
-  body {
-    padding-top: 0;
   }
 
   .header-logo img {
@@ -195,5 +191,77 @@ a {
     padding: 12px 0;
     font-size: 14px;
     border-radius: 8px;
+  }
+}
+
+/* 404 */
+.error-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
+  background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(245,245,245,1) 100%);
+}
+
+.error-content {
+  max-width: 600px;
+  animation: fadeInError 0.8s ease-out;
+}
+
+.error-code {
+  font-family: var(--font-delta);
+  font-size: 120px;
+  margin: 0;
+  color: var(--accent-color);
+  line-height: 1;
+  letter-spacing: -2px;
+  text-shadow: 4px 4px 0px rgba(0, 0, 0, 0.05); 
+}
+
+.error-title {
+  font-family: var(--font-main);
+  font-weight: 700;
+  font-size: 24px;
+  color: #333;
+  margin: 10px 0 20px 0;
+}
+
+.error-text {
+  font-family: var(--font-main);
+  font-size: 16px;
+  font-weight: 900;
+  color: #666;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.error-home-btn {
+  display: inline-block;
+  text-decoration: none;
+}
+
+@keyframes fadeInError {
+  from {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .error-code {
+      font-size: 80px;
+  }
+  .error-title {
+      font-size: 18px;
+  }
+  .error-container {
+      min-height: 100vh;
   }
 }
