@@ -3,10 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Регистрация</title>
+    <title>Регистрация — JapanWay</title>
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/register.css">
+    <link rel="icon" type="image/png" href="photo/favicon.png">
 </head>
 <body class="register-page">
+
+    <div class="sakura-rain-container" id="sakura-rain"></div>
 
     <a href="index.html" class="back-to-site">← На главную</a>
 
@@ -15,6 +19,7 @@
     <div class="auth-card">
         
         <div class="auth-screen form-screen">
+            <span class="jap-subtitle">アカウント作成</span>
             <h1 class="auth-title">Регистрация</h1>
             <p class="auth-subtitle">предрегистрация аккаунта</p>
             
@@ -39,9 +44,10 @@
         </div>
 
         <div class="auth-screen success-screen">
-            <div class="success-icon">✓</div>
+            <div class="success-icon">🌸</div>
+            <span class="jap-subtitle">送信完了</span>
             <h2 class="success-title">Заявка передана</h2>
-            <p class="success-text">Ваша заявка на регистрацию успешно передана владельцам сайта. Пожалуйста, ожидайте подтверждения.</p>
+            <p class="success-text">Ваша заявка на регистрацию успешно передана владельцам сайта. Пожалуйста, ожидайте подтверждения на указанный E-mail.</p>
             
             <a href="index.html" class="action-btn back-home-btn">
                 На главную
@@ -50,5 +56,6 @@
 
     </div>
 
+    <script src="js/register.js"></script>
 </body>
 </html>
