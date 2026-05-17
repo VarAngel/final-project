@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Раздел в разработке — JapanWay</title>
+    <title>Раздел в разработке</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/under-development.css">
 </head>
@@ -29,34 +29,6 @@
     </div>
 </main>
 
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-    const variations = [
-        {
-            jap: "桜の蕾",
-            title: "Контент еще набирает цвет",
-            text: "Как бутоны сакуры бережно ждут своего сезона, так и мы поливаем строками кода этот раздел. Совсем скоро он распустится во всей красе!"
-        },
-        {
-            jap: "新ルート",
-            title: "Синкансэн уже разгоняется",
-            text: "Мы укладываем последние рельсы, протираем лобовое стекло поезда и упаковываем чемоданы с крутыми гайдами. Будьте готовы к отправлению."
-        },
-        {
-            jap: "手作り",
-            title: "Мастера наводят финальный глянец",
-            text: "Скрупулезно, как японские кузнецы, мы выковываем вручную каждую деталь этой страницы. Самурайское терпение обязательно вознаграждается."
-        }
-    ];
-
-    const randomIndex = Math.floor(Math.random() * variations.length);
-    const chosen = variations[randomIndex];
-
-    document.querySelector(".jap-subtitle").textContent = chosen.jap;
-    document.querySelector(".dev-title").textContent = chosen.title;
-    document.querySelector(".dev-text").textContent = chosen.text;
-});
-</script>
-
+<script src="js/under-development.js"></script>
 </body>
 </html>
