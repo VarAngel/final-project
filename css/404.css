@@ -33,17 +33,24 @@
 .error-title {
   font-family: var(--font-delta);
   font-weight: 700;
-  font-size: 24px;
+  font-size: 25px;
   color: #333;
   margin: 10px 0 20px 0;
 }
 
 .error-text {
   font-family: var(--font-main);
-  font-size: 16px;
+  font-size: 20px;
   color: #666;
   line-height: 1.6;
   margin: 0 0 30px 0;
+}
+
+.error-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
 }
 
 .error-actions {
