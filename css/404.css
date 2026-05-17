@@ -1,5 +1,30 @@
+.action-btn.error-home-btn {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.action-btn.btn-disabled {
+  background-color: #e0e0e0 !important;
+  border-color: #d6d6d6 !important;
+  color: #888888 !important;
+  opacity: 0.6;
+  cursor: not-allowed !important;
+  box-shadow: none !important;
+  transform: none !important;
+  text-shadow: none !important;
+}
+
+.sakura-petal {
+  position: absolute;
+  top: -20px;
+  user-select: none;
+  pointer-events: none;
+  z-index: 1;
+  animation: coinFalling forwards linear;
+}
+
 .error-container {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100%;
@@ -13,6 +38,21 @@
   overflow: hidden;
 }
 
+.error-steps-badge {
+  position: absolute;
+  top: 30px;
+  font-family: var(--font-main);
+  font-size: 13px;
+  color: #888;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 6px 14px;
+  border-radius: 30px;
+  border: 1px solid #eee;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+  z-index: 20;
+}
+
 .error-box {
   max-width: 600px;
   width: 100%;
@@ -22,82 +62,82 @@
 
 .error-code {
   font-family: var(--font-delta);
-  font-size: 120px;
+  font-size: 130px;
   margin: 0;
   color: var(--accent-color);
   line-height: 1;
-  letter-spacing: -2px;
-  text-shadow: 4px 4px 0px rgba(0, 0, 0, 0.05); 
+  letter-spacing: -4px;
+  text-shadow: 4px 4px 0px rgba(0, 0, 0, 0.03); 
+}
+
+.jap-subtitle {
+  display: inline-block;
+  font-family: var(--font-main);
+  font-size: 15px;
+  font-weight: 700;
+  color: #aaa;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-top: 5px;
 }
 
 .error-title {
   font-family: var(--font-delta);
   font-weight: 700;
-  font-size: 25px;
-  color: #333;
-  margin: 10px 0 20px 0;
+  font-size: 24px;
+  color: #222;
+  margin: 15px 0 15px 0;
+  text-transform: uppercase;
 }
 
 .error-text {
   font-family: var(--font-main);
-  font-size: 20px;
-  color: #666;
-  line-height: 1.6;
-  margin: 0 0 30px 0;
-}
-
-.error-section {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
+  font-size: 16px;
+  color: #555;
+  line-height: 1.8;
+  margin: 0 0 35px 0;
+  min-height: 85px;
 }
 
 .error-actions {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
   margin-top: 10px;
 }
 
-.sakura-petal {
-    position: absolute;
-    top: -20px;
-    user-select: none;
-    pointer-events: none;
-    z-index: 1;
-    animation: coinFalling forwards linear;
+.action-btn.shuffle-btn {
+  background-color: transparent;
+  color: #444;
+  border: 2px solid #ddd;
 }
 
-@keyframes coinFalling {
-  0% {
-    top: -60px;
-    transform: rotate(0deg) scale(0.5);
-    opacity: 0;
-  }
-  15% {
-    opacity: 1;
-    transform: rotate(60deg) scale(1);
-  }
-  85% {
-    opacity: 1;
-  }
-  100% {
-    top: 105vh;
-    transform: rotate(720deg) scale(0.8);
-    opacity: 0;
-  }
+.action-btn.shuffle-btn:hover {
+  background-color: #444;
+  color: #fff;
+  border-color: #444;
+}
+
+.error-content {
+  transition: opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1), transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform, opacity;
+}
+
+.error-content.fade-out-up {
+  opacity: 0;
+  transform: translateY(-15px) scale(0.98);
+}
+
+.error-content.prepare-down {
+  transition: none !important;
+  opacity: 0;
+  transform: translateY(15px) scale(1.02);
 }
 
 @media screen and (max-width: 768px) {
-  .error-container {
-    padding: 15px;
-  }
-  .error-code {
-    font-size: 90px;
-  }
-  .error-title {
-    font-size: 20px;
-  }
-  .error-text {
-    font-size: 14px;
-    margin-bottom: 25px;
-  }
+  .error-code { font-size: 95px; }
+  .error-title { font-size: 19px; }
+  .error-text { font-size: 14px; min-height: 110px; }
+  .error-actions { flex-direction: column; gap: 10px; padding: 0 20px; }
+  .error-steps-badge { top: 15px; font-size: 11px; }
 }
