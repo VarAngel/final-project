@@ -8,7 +8,7 @@
     text-align: center;
     padding: 20px;
     box-sizing: border-box;
-    background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(248,248,248,1) 100%);
+    background: radial-gradient(circle, #ffebeb 0%, #ffffff 100%);
 }
 
 .dev-content {
