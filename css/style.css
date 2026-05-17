@@ -162,6 +162,17 @@ header {
   margin-bottom: 4px;
 }
 
+.tokyo-date {
+  display: block;
+  font-family: var(--font-main);
+  font-size: 14px;
+  color: #888;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 2px;
+  text-transform: uppercase;
+}
+
 .main-content {
   padding-top: 50px;
 }
@@ -660,6 +671,99 @@ header {
   user-select: none;
   will-change: transform, top;
   animation: coinFalling forwards linear;
+}
+
+.japan-card.mysterious-card {
+  background: linear-gradient(135deg, #14141f 0%, #1a1a2e 100%) !important;
+  border: 1px solid rgba(255, 51, 51, 0.25) !important;
+  color: #ffffff !important;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease;
+}
+
+.japan-card.mysterious-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 51, 51, 0.12) 0%, transparent 65%);
+  animation: mistFloating 10s infinite alternate ease-in-out;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.mysterious-card .card-header h3 {
+  color: #ffffff !important;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+.mysterious-card .jap-subtitle {
+  color: #ff3333 !important;
+  font-weight: 700;
+  text-shadow: 0 0 8px rgba(255, 51, 51, 0.4);
+}
+
+.mysterious-card-body {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+}
+
+.mysterious-card .card-text {
+  color: #cdcdde !important;
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 15px 0 25px 0;
+}
+
+.action-btn.mystery-btn {
+  background: transparent !important;
+  color: #ff3333 !important;
+  border: 2px solid #ff3333 !important;
+  box-shadow: 0 0 10px rgba(255, 51, 51, 0.15);
+  font-weight: 700;
+  transition: all 0.3s ease;
+  text-align: center;
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px 0;
+  border-radius: 8px;
+}
+
+.action-btn.mystery-btn:hover {
+  background: #ff3333 !important;
+  color: #ffffff !important;
+  box-shadow: 0 0 25px rgba(255, 51, 51, 0.7), inset 0 0 10px rgba(255,255,255,0.2);
+  transform: translateY(-2px);
+}
+
+.japan-card.mysterious-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(255, 51, 51, 0.15);
+  border-color: rgba(255, 51, 51, 0.5) !important;
+}
+
+@media screen and (min-width: 992px) {
+  .japan-info-section .info-grid {
+      grid-template-columns: repeat(3, 1fr) !important;
+  }
+}
+
+@keyframes mistFloating {
+  0% { transform: translate(-5%, -5%) rotate(0deg) scale(1); }
+  50% { transform: translate(5%, 8%) rotate(5deg) scale(1.1); }
+  100% { transform: translate(-2%, 5%) rotate(-5deg) scale(1); }
 }
 
 @keyframes catWaving {
