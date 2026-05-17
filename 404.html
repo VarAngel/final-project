@@ -12,18 +12,20 @@
 <header class="main-header" style="opacity: 0; pointer-events: none; visibility: hidden;"></header>
 
 <main class="error-container" id="404-container">
+    <div class="error-steps-badge">Пройдено шагов по межстраничью: <span id="step-count">1</span></div>
+
     <div class="error-box">
         <div class="error-content">
             <h1 class="error-code">404</h1>
             <span class="jap-subtitle">接続エラー</span>
-            <h2 class="error-title">Страница не найдена</h2>
-            <p class="error-text">Загрузка маршрута...</p>
+            <h2 class="error-title">Загрузка...</h2>
+            <p class="error-text">Ищем правильное направление в тумане...</p>
         </div>
         
-        <section class="error-section">
-            <div class="error-actions"><a href="index.html" class="action-btn error-home-btn">Перезагрузить маршрут</a></div>
-            <div class="error-actions"><a href="404.html" class="action-btn">?</a></div>
-        </section>
+        <div class="error-actions">
+            <a href="index.html" class="action-btn error-home-btn btn-disabled" style="pointer-events: none;">Синхронизация...</a>
+            <a href="#" id="shuffle-btn" class="action-btn shuffle-btn">Испытать удачу 🌸</a>
+        </div>
     </div>
 </main>
 
