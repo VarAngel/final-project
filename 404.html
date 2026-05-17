@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>404</title>
+    <title>404 — Маршрут потерян</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/404.css">
 </head>
@@ -12,13 +12,42 @@
 <main class="error-container">
     <div class="error-content">
         <h1 class="error-code">404</h1>
-        <h2 class="error-title">接続エラー</h2>
-        <p class="error-text">
-            Похоже, неоновые провода Токио запутались, или на сервере произошел сбой в матрице. Вы забрели в заброшенный цифровой переулок, где нет нужных данных. 
-        </p>
+        <span class="jap-subtitle">接続エラー</span>
+        <h2 class="error-title">Страница не найдена</h2>
+        <p class="error-text">Загрузка маршрута...</p>
+        
         <a href="index.html" class="action-btn error-home-btn">Перезагрузить маршрут</a>
     </div>
 </main>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const variations = [
+        {
+            jap: "デジタル迷宮",
+            title: "Маршрут потерян в неоновом тумане",
+            text: "Похоже, провода Токио запутались, или неоновый указатель завел вас не туда. Эту цифровую локацию еще не нанесли на наши карты путеводителя."
+        },
+        {
+            jap: "隠された道",
+            title: "Вы нашли пустую чайную комнату",
+            text: "Иногда, чтобы найти верный путь, нужно сначала заблудиться. Но здесь ничего нет, кроме дзен-тишины и кода ошибки. Давайте вернемся назад."
+        },
+        {
+            jap: "行き止まり",
+            title: "Сюда не ходят скоростные поезда",
+            text: "Вы вышли на виртуальной станции, которой не существует. Дальше рельсы обрываются в бесконечной цифровой пустоте. Развернемся?"
+        }
+    ];
+
+    const randomIndex = Math.floor(Math.random() * variations.length);
+    const chosen = variations[randomIndex];
+
+    document.querySelector(".jap-subtitle").textContent = chosen.jap;
+    document.querySelector(".error-title").textContent = chosen.title;
+    document.querySelector(".error-text").textContent = chosen.text;
+});
+</script>
 
 </body>
 </html>
