@@ -3,29 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JapanWay • Раздел в разработке</title>
+    <title>Тракт заблокирован</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/under-development.css">
-    <link rel="icon" type="image/png" href="photo/favicon.png">
 </head>
 <body>
 
 <main class="dev-container">
+    <div class="tokyo-time-widget">
+        <span class="widget-dot"></span> Мастерская Токио: <span id="tokyo-time">00:00:00</span> JST
+    </div>
+
     <div class="dev-content">
         <div class="dev-icon-wrapper">
             <span class="dev-jap-char">準備中</span>
             <div class="dev-graphic">
-                <a href="under-development.html"class="emoji-crane">🏗️</a>
-                <a href="404.html" class="emoji-sakura">🌸</a>
+                <span class="emoji-crane">🏗️</span>
+                <span class="emoji-sakura">🌸</span>
             </div>
         </div>
         
-        <span class="jap-subtitle">まもなく公開</span>
-        <h1 class="dev-title">Раздел в разработке</h1>
-        <p class="dev-text">Приготовление контента...</p>
+        <div class="dev-text-block">
+            <span class="jap-subtitle">まもなく公開</span>
+            <h1 class="dev-title">Раздел в разработке</h1>
+            <p class="dev-text">Сканирование целостности пути...</p>
+        </div>
+        
+        <div class="progress-box">
+            <div class="progress-info">
+                <span>Прогресс ремонта мостов кода:</span>
+                <span id="progress-percent">0%</span>
+            </div>
+            <div class="progress-bar-container">
+                <div id="progress-bar-fill" class="progress-bar-fill"></div>
+            </div>
+        </div>
         
         <div class="dev-actions">
-            <a href="index.html" class="action-btn">На главную</a>
+            <a href="index.html" class="action-btn dev-home-btn disabled-btn">Путь назад разрушен ❌</a>
+            <a href="#" id="speed-up-btn" class="action-btn speed-up-btn">Помочь в ремонте 🛠️</a>
         </div>
     </div>
 </main>
