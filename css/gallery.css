@@ -131,6 +131,160 @@
     text-transform: lowercase;
 }
 
+.mysterious-gallery-section {
+    margin-top: 40px;
+    margin-bottom: 120px !important;
+}
+
+.mysterious-gallery-section .location-title {
+    color: #111;
+    position: relative;
+}
+
+.mysterious-gallery-section .jap-subtitle {
+    color: #ff3333 !important;
+}
+
+.mysterious-gallery-section .location-tag {
+    background: #111 !important;
+    color: #fff !important;
+    border-color: #111 !important;
+    animation: neonPulse 2s infinite alternate ease-in-out;
+}
+
+.grid-mystery {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 280px;
+}
+
+.grid-mystery .card-mystery-info {
+    grid-column: span 5;
+    background: #f9f9f9;
+    border: 1px dashed #ccc;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    border-radius: 16px;
+}
+
+.mystery-info-content p {
+    font-family: var(--font-main);
+    font-size: 15px;
+    color: #555;
+    line-height: 1.7;
+    margin: 0 0 15px 0;
+}
+
+.mystery-info-content .warning-text {
+    font-family: var(--font-delta);
+    font-size: 11px;
+    color: #ff3333;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.grid-mystery .card-anomaly {
+    grid-column: span 7;
+    background: linear-gradient(45deg, #0d0d13 0%, #1a1520 100%);
+    border: 1px solid rgba(255, 51, 51, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    padding: 40px;
+    box-sizing: border-box;
+    text-decoration: none;
+    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.4s ease;
+}
+
+.anomaly-overlay {
+    position: relative;
+    z-index: 5;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.anomaly-icon {
+    font-size: 32px;
+    display: inline-block;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease;
+}
+
+.card-anomaly .photo-title {
+    color: #fff !important;
+    font-size: 20px;
+    margin: 0 0 8px 0;
+    text-shadow: 0 0 10px rgba(255,255,255,0.2);
+}
+
+.anomaly-desc {
+    font-family: var(--font-main);
+    color: #8e8e9f;
+    font-size: 13px;
+    margin: 0;
+    max-width: 320px;
+}
+
+.glitch-line {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: rgba(255, 51, 51, 0.4);
+    box-shadow: 0 0 8px #ff3333;
+    opacity: 0;
+    pointer-events: none;
+    animation: scanline 3s infinite linear;
+}
+
+.card-anomaly:hover {
+    transform: scale(1.01) translateY(-3px);
+    box-shadow: 0 15px 35px rgba(255, 51, 51, 0.1);
+    border-color: rgba(255, 51, 51, 0.4);
+}
+
+.card-anomaly:hover .anomaly-icon {
+    transform: scale(1.2) rotate(15deg);
+}
+
+.card-anomaly:hover .glitch-line {
+    opacity: 1;
+}
+
+@keyframes neonPulse {
+    0% { box-shadow: 0 0 5px rgba(255, 51, 51, 0.2); }
+    100% { box-shadow: 0 0 15px rgba(255, 51, 51, 0.6); border-color: #ff3333; }
+}
+
+@keyframes scanline {
+    0% { top: 0%; }
+    50% { top: 100%; }
+    100% { top: 0%; }
+}
+
+@media screen and (max-width: 992px) {
+    .grid-mystery {
+        grid-template-rows: auto auto;
+    }
+    .grid-mystery .card-mystery-info {
+        grid-column: span 12;
+    }
+    .grid-mystery .card-anomaly {
+        grid-column: span 12;
+        padding: 50px 20px;
+    }
+}
+
 @media (hover: hover) {
     .photo-card:hover {
         transform: translateY(-6px);
