@@ -10,7 +10,7 @@ html {
   --bg-blur: rgba(255, 255, 255, 0.1);
   --blur-strength: 8px;
   --font-delta: "Dela Gothic One", sans-serif;
-  --font-main: "Zen Kaku Gothic New", serif;
+  --font-main: "Zen Kaku Gothic New", sans-serif;
 }
 
 body {
@@ -114,6 +114,9 @@ a {
 }
 
 .action-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   background-color: var(--accent-color);
   color: white;
   border: none;
@@ -124,6 +127,7 @@ a {
   cursor: pointer;
   box-shadow: 0 4px 15px rgba(255, 51, 51, 0.3);
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  text-decoration: none;
 }
 
 .action-btn:hover {
@@ -194,7 +198,6 @@ a {
   }
 }
 
-/* 404 */
 .error-container {
   display: flex;
   justify-content: center;
@@ -232,7 +235,7 @@ a {
 .error-text {
   font-family: var(--font-main);
   font-size: 16px;
-  font-weight: 900;
+  font-weight: 400;
   color: #666;
   margin-bottom: 30px;
   line-height: 1.6;
