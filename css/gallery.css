@@ -1,7 +1,7 @@
 .gallery-hero {
     max-width: 1400px;
     margin: 0 auto;
-    padding: 110px 40px 40px 40px;
+    padding: 120px 40px 40px 40px;
     text-align: center;
     box-sizing: border-box;
 }
@@ -37,24 +37,117 @@
     justify-content: space-between;
     border-bottom: 2px solid #f0f0f0;
     padding-bottom: 15px;
-    margin-bottom: 30px;
+    margin-bottom: 35px;
 }
 
 .location-branding h2 {
     font-family: var(--font-delta);
-    font-size: 24px;
-    color: #111;
+    font-size: 28px;
     margin: 0;
     text-transform: uppercase;
+    color: #1a1a1a;
+    display: flex;
+    align-items: center;
+    gap: 15px;
 }
 
-.location-branding .jap-subtitle {
-    font-family: var(--font-delta);
-    font-size: 14px;
+.location-branding h2 span.jap-char {
     color: var(--accent-color);
+    font-size: 20px;
+    opacity: 0.8;
 }
 
-.photo-grid {
+.location-meta {
+    font-family: var(--font-main);
+    font-size: 14px;
+    color: #888;
+    font-style: italic;
+}
+
+.photo-card {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    background-color: #fcfcfc;
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.04);
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), 
+                box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    cursor: pointer;
+}
+
+.photo-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+                filter 0.5s ease;
+}
+
+.photo-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 40px 30px 30px 30px;
+    background: linear-gradient(to top, 
+        rgba(0, 0, 0, 0.85) 0%, 
+        rgba(0, 0, 0, 0.4) 60%, 
+        rgba(0, 0, 0, 0) 100%);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    opacity: 0;
+    transform: translateY(15px);
+    transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+                transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.photo-title {
+    font-family: var(--font-delta);
+    color: #ffffff;
+    font-size: 16px;
+    text-transform: uppercase;
+    margin: 0 0 8px 0;
+    letter-spacing: 0.5px;
+}
+
+.photo-tags {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.tag {
+    font-family: var(--font-main);
+    font-size: 11px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    color: #fff;
+    padding: 3px 10px;
+    border-radius: 6px;
+    text-transform: lowercase;
+}
+
+@media (hover: hover) {
+    .photo-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+    }
+    
+    .photo-card:hover img {
+        transform: scale(1.05);
+    }
+    
+    .photo-card:hover .photo-info {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.grid-container {
     display: grid;
     gap: 30px;
 }
@@ -63,17 +156,16 @@
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: repeat(2, 320px);
 }
-.grid-tokyo .card-1 { grid-column: span 8; grid-row: span 2; }
-.grid-tokyo .card-2 { grid-column: span 4; }
-.grid-tokyo .card-3 { grid-column: span 4; }
+.grid-tokyo .card-1 { grid-column: span 7; grid-row: span 2; }
+.grid-tokyo .card-2 { grid-column: span 5; grid-row: span 1; }
+.grid-tokyo .card-3 { grid-column: span 5; grid-row: span 1; }
 
 .grid-kyoto {
-    display: flex;
-    gap: 30px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     height: 500px;
 }
-.grid-kyoto .card-1 { flex: 2; }
-.grid-kyoto .card-2 { flex: 1; }
+.grid-kyoto .photo-card { height: 100%; }
 
 .grid-fuji {
     grid-template-columns: repeat(12, 1fr);
@@ -82,87 +174,6 @@
 .grid-fuji .card-1 { grid-column: span 6; }
 .grid-fuji .card-2 { grid-column: span 6; }
 .grid-fuji .card-3 { grid-column: span 12; }
-
-.photo-card {
-    position: relative;
-    border-radius: 16px;
-    overflow: hidden;
-    background-color: #f5f5f5;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
-    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.4s ease;
-}
-
-.photo-card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
-}
-
-.photo-info {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    padding: 30px;
-    box-sizing: border-box;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0) 100%);
-    opacity: 0;
-    transform: translateY(10px);
-    transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
-}
-
-.photo-title {
-    font-family: var(--font-delta);
-    font-size: 16px;
-    color: #fff;
-    margin: 0;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.photo-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
-}
-
-.photo-card:hover img {
-    transform: scale(1.04);
-}
-
-.photo-card:hover .photo-info {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.cta-gallery-section {
-    background-color: #f9f9f9;
-    padding: 80px 20px;
-    text-align: center;
-    border-top: 1px solid #eee;
-}
-
-.cta-container {
-    max-width: 650px;
-    margin: 0 auto;
-}
-
-.cta-container h3 {
-    font-family: var(--font-delta);
-    font-size: 28px;
-    color: #111;
-    margin: 10px 0 20px 0;
-    text-transform: uppercase;
-}
-
-.cta-text {
-    font-family: var(--font-main);
-    font-size: 15px;
-    color: #555;
-    line-height: 1.8;
-    margin-bottom: 35px;
-}
 
 @media screen and (max-width: 1024px) {
     .gallery-hero h1 { font-size: 34px; }
@@ -191,50 +202,31 @@
     .location-branding {
         margin-bottom: 20px;
     }
+    
     .location-branding h2 {
-        font-size: 18px;
+        font-size: 20px;
     }
     
-    .photo-grid, .grid-tokyo, .grid-fuji {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
+    .grid-container, .grid-tokyo, .grid-kyoto, .grid-fuji {
+        display: flex !important;
+        flex-direction: column !important;
+        height: auto !important;
+        gap: 20px !important;
     }
     
-    .grid-tokyo .card-1, .grid-tokyo .card-2, .grid-tokyo .card-3,
-    .grid-fuji .card-1, .grid-fuji .card-2, .grid-fuji .card-3 {
+    .photo-card {
         grid-column: auto !important;
         grid-row: auto !important;
-    }
-    
-    .grid-tokyo .photo-card, .grid-fuji .photo-card {
-        height: 250px;
-    }
-    
-    .grid-kyoto {
-        flex-direction: column;
-        height: auto;
-    }
-    .grid-kyoto .photo-card {
-        height: 250px;
+        height: 280px !important;
     }
     
     .photo-info {
         opacity: 1;
         transform: translateY(0);
-        padding: 20px;
-    }
-    .photo-title {
-        font-size: 14px;
+        padding: 30px 20px 20px 20px;
     }
     
-    .cta-gallery-section {
-        padding: 50px 20px;
-    }
-    .cta-container h3 {
-        font-size: 22px;
-    }
-    .cta-text {
+    .photo-title {
         font-size: 14px;
     }
 }
