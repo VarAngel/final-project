@@ -35,7 +35,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const japSubtitle = document.querySelector(".jap-subtitle");
     const errorTitle = document.querySelector(".error-title");
     const errorText = document.querySelector(".error-text");
-    const errorContent = document.querySelector(".error-content");
 
     const currentIdx = Math.floor(Math.random() * variations.length);
     const chosen = variations[currentIdx];
@@ -45,39 +44,4 @@ document.addEventListener("DOMContentLoaded", () => {
         errorTitle.textContent = chosen.title;
         errorText.textContent = chosen.text;
     }
-
-    if (errorContent) {
-        errorContent.style.opacity = "1";
-    }
--
-    const errorContainer = document.querySelector('.error-container');
-    if (!errorContainer) return;
-
-    const petals = ['🌸', '💮'];
-
-    function createPetal() {
-        const petal = document.createElement('div');
-        petal.className = 'sakura-petal';
-        petal.innerText = petals[Math.floor(Math.random() * petals.length)];
-        
-        const randomX = Math.random() * 96;
-        petal.style.left = `${randomX}%`;
-        
-        const randomDelay = Math.random() * 0.5;
-        petal.style.animationDelay = `${randomDelay}s`;
-        
-        const randomDuration = 5 + Math.random() * 4;
-        petal.style.animationDuration = `${randomDuration}s`;
-        
-        const randomSize = 12 + Math.random() * 12;
-        petal.style.fontSize = `${randomSize}px`;
-
-        errorContainer.appendChild(petal);
-
-        petal.addEventListener('animationend', () => {
-            petal.remove();
-        });
-    }
-
-    setInterval(createPetal, 350);
 });
