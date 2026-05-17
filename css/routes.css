@@ -145,6 +145,98 @@
     background: var(--accent-color);
 }
 
+@media screen and (min-width: 992px) {
+    .routes-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 40px !important;
+    }
+}
+
+.route-card.secret-anomaly-route {
+    background: linear-gradient(135deg, #09090e 0%, #13111c 100%) !important;
+    border: 1px solid rgba(255, 51, 51, 0.2) !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+}
+
+.secret-anomaly-route .route-image {
+    background: #000 url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><text y="60" x="15" fill="rgba(255,51,51,0.05)" font-size="50" font-family="monospace">404</text></svg>') repeat !important;
+    position: relative;
+    overflow: hidden;
+}
+
+.anomaly-scanlines {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(transparent 50%, rgba(255, 51, 51, 0.08) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.03));
+    background-size: 100% 4px, 6px 100%;
+    z-index: 1;
+}
+
+.badge-anomaly {
+    background: #ff3333 !important;
+    color: #fff !important;
+    box-shadow: 0 0 15px rgba(255, 51, 51, 0.6);
+    animation: routeFlash 1.5s infinite alternate ease-in-out;
+}
+
+.secret-anomaly-route .route-title {
+    color: #ffffff !important;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.1);
+}
+
+.secret-anomaly-route .route-type {
+    color: #ff3333 !important;
+    font-weight: 700;
+}
+
+.secret-anomaly-route .route-days {
+    color: #8e8e9f !important;
+}
+
+.secret-anomaly-route .route-description {
+    color: #cdcdde !important;
+}
+
+.secret-anomaly-route .route-locations {
+    background: rgba(255, 255, 255, 0.03) !important;
+    border: 1px solid rgba(255, 51, 51, 0.1) !important;
+    color: #a0a0b0 !important;
+}
+
+.secret-anomaly-route .route-locations span {
+    color: #ff3333 !important;
+}
+
+.route-btn.anomaly-btn {
+    background: transparent !important;
+    color: #ff3333 !important;
+    border: 2px solid #ff3333 !important;
+    box-shadow: 0 0 10px rgba(255, 51, 51, 0.1);
+    font-weight: 700;
+}
+
+.route-btn.anomaly-btn:hover {
+    background: #ff3333 !important;
+    color: #ffffff !important;
+    box-shadow: 0 0 25px rgba(255, 51, 51, 0.6), inset 0 0 8px rgba(255,255,255,0.3) !important;
+    transform: translateY(-2px);
+}
+
+.route-card.secret-anomaly-route:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(255, 51, 51, 0.15);
+    border-color: rgba(255, 51, 51, 0.4) !important;
+}
+
+@keyframes routeFlash {
+    0% { opacity: 0.8; box-shadow: 0 0 5px rgba(255, 51, 51, 0.4); }
+    100% { opacity: 1; box-shadow: 0 0 20px rgba(255, 51, 51, 0.8); }
+}
+
 @media screen and (max-width: 1024px) {
     .routes-grid { grid-template-columns: repeat(2, 1fr); }
     .routes-hero h1 { font-size: 34px; }
