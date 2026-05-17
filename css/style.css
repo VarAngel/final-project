@@ -507,8 +507,8 @@ header {
   }
 
   .cta-gallery-section {
-    padding: 20px 15px 60px 15px;
-    margin: 20px auto;
+    padding: 20px 15px 10px 15px;
+    margin: 20px auto 0 auto;
   }
   .cta-container {
     padding: 35px 20px;
@@ -554,7 +554,6 @@ header {
   background-color: #111;
   color: #fff;
   padding: 30px 0;
-  margin-top: 80px;
   border-top: 3px solid var(--accent-color);
 }
 
