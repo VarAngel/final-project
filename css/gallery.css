@@ -156,7 +156,7 @@
     display: grid;
     gap: 30px;
     grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: 280px;
+    grid-auto-rows: minmax(280px, auto);
 }
 
 .grid-mystery .card-mystery-info {
@@ -361,7 +361,7 @@
         font-size: 20px;
     }
     
-    .grid-container, .grid-tokyo, .grid-kyoto, .grid-fuji {
+    .grid-container, .grid-tokyo, .grid-kyoto, .grid-fuji, .grid-mystery {
         display: flex !important;
         flex-direction: column !important;
         height: auto !important;
