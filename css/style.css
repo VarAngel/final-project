@@ -137,20 +137,10 @@ header {
   transform: scale(0.98);
 }
 
-.japan-card {
-  background: rgba(255, 255, 255, 0.5);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 16px;
-  padding: 30px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.03);
-  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), border-color 0.3s ease;
-}
+/* */
 
-.japan-card:hover {
-  transform: translateY(-5px);
-  border-color: var(--accent-color);
+.main-content {
+  padding-top: 50px;
 }
 
 .jap-subtitle {
@@ -162,51 +152,7 @@ header {
   margin-bottom: 4px;
 }
 
-.tokyo-date {
-  display: block;
-  font-family: var(--font-main);
-  font-size: 14px;
-  color: #888;
-  font-weight: 700;
-  letter-spacing: 1px;
-  margin-bottom: 2px;
-  text-transform: uppercase;
-}
-
-.main-content {
-  padding-top: 50px;
-}
-
-.japan-info-section {
-  padding: 40px 40px;
-  max-width: 1200px;
-  margin: 0 auto;
-  box-sizing: border-box;
-}
-
-.info-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
-}
-
-.fade-out {
-  opacity: 0;
-  transform: translateY(-5px);
-  transition: opacity 0.4s ease, transform 0.4s ease;
-}
-.fade-in {
-  opacity: 1;
-  transform: translateY(0);
-  transition: opacity 0.4s ease, transform 0.4s ease;
-}
-
-.japan-card h3 {
-  font-family: var(--font-delta);
-  font-size: 20px;
-  margin: 0 0 20px 0;
-  text-transform: uppercase;
-}
+/* */
 
 .time-text { font-size: 14px; color: #666; margin: 0 0 15px 0; }
 .weather-status { display: flex; align-items: center; gap: 15px; margin-bottom: 15px; }
