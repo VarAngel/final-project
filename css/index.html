@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JapanWay • Главная</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="main-header">
+    <div class="header-logo">
+        <a href="index.html">
+            <img src="photo/logo.png" alt="Логотип">
+        </a>
+    </div>
+
+    <nav class="header-center-nav">
+        <a href="index.html" class="nav-btn active">Главная</a>
+        <a href="gallery.html" class="nav-btn">Галерея</a>
+        <a href="routes.html" class="nav-btn">Маршруты</a>
+        <a href="about.html" class="nav-btn">О нас</a>
+    </nav>
+
+    <div class="header-right-action">
+        <a href="register.html" class="action-btn">Вход</a>
+    </div>
+</header>
+
+<main class="main-content">
+    <section class="japan-info-section">
+        <div class="info-grid">
+            <div class="japan-card weather-card">
+                <div class="card-header">
+                    <span class="jap-subtitle">ライブ</span>
+                    <h3>Токио Сейчас</h3>
+                </div>
+                <div class="weather-timezone">
+                    <p class="time-text">Время: <span id="tokyo-time">--:--:--</span> (GMT+9)</p>
+                    <div class="weather-status">
+                        <span class="weather-icon" id="weather-icon">🌸</span>
+                        <span class="weather-temp" id="weather-temp">--°C</span>
+                    </div>
+                    <p class="season-text" id="weather-desc">Загрузка погоды...</p>
+                </div>
+            </div>
+
+            <div class="japan-card fact-card">
+                <div class="card-header">
+                    <span class="jap-subtitle">事実</span>
+                    <h3>Знаете ли вы?</h3>
+                </div>
+                <p id="random-fact-text" class="card-text">Загрузка интересного факта...</p>
+            </div>
+
+            <div class="japan-card mysterious-card">
+                <div class="card-header">
+                    <span class="jap-subtitle">危険 / 迷路</span>
+                    <h3>Запретная тропа</h3>
+                </div>
+                <div class="mysterious-card-body">
+                    <p class="card-text">
+                        Старожилы Киото поговаривают, что этот заброшенный лесной путь уводит прямиком в скрытые неоновым туманом миры, откуда ещё ни один странник не возвращался прежним. Рискнёте сойти с безопасного тракта?
+                    </p>
+                    <a href="abandoned-shrine.html" class="action-btn mystery-btn">Свернуть в туман</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="locations-section">
+        <span class="section-subtitle">場所</span>
+        <h2 class="section-title">Популярные направления</h2>
+        
+        <div class="locations-grid">
+            <div class="location-item">
+                <div class="location-num">01</div>
+                <h4>Киото</h4>
+                <p>Тысячи бамбуковых рощ, древние деревянные храмы и атмосфера старой традиционной Японии.</p>
+            </div>
+            <div class="location-item">
+                <div class="location-num">02</div>
+                <h4>Гора Фудзи</h4>
+                <p>Священный символ страны. Идеальное место для хайкинга и созерцания рассветов.</p>
+            </div>
+            <div class="location-item">
+                <div class="location-num">03</div>
+                <h4>Осака</h4>
+                <p>Гастрономическая столица. Неоновые улицы, невероятный стрит-фуд и знаменитый замок.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-gallery-section">
+        <div class="cta-container">
+            <span class="jap-subtitle">ビジュアル</span>
+            <h3>Погрузитесь в атмосферу</h3>
+            <p class="cta-text">
+                Откройте для себя Японию через объектив камеры. Мы собрали потрясающие кадры неоновых улиц Токио, умиротворяющих бамбуковых рощ Киото и заснеженных вершин Фудзи.
+            </p>
+            <a href="gallery.html" class="action-btn cta-btn">
+                Начать изучать
+            </a>
+        </div>
+    </section>
+
+    <div class="global-coin-rain" id="global-coin-rain"></div>
+
+    <footer class="main-footer">
+        <div class="footer-container">
+            <p class="footer-copy">&copy; 2026 JapanWay. Все права защищены.</p>
+            
+            <div class="lucky-cat-wrapper" id="lucky-cat-trigger">
+                <div class="coin-container" id="coin-container"></div>
+                <div class="lucky-cat">🐱👋</div>
+                <span class="cat-tooltip">Нажми на удачу</span>
+            </div>
+        </div>
+    </footer>
+</main>
+
+<script src="js/main.js"></script>
+</body>
+</html>
